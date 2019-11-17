@@ -1,0 +1,12 @@
+{
+	"gun": {
+		"id": 1,
+		"range": 100,
+		"speed": 400,
+		"damage": 10,
+		"delay": 400,
+		"quantity": 10,
+		"trackX": 1,
+		"trackY": 1
+	}
+}

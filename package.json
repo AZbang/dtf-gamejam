@@ -1,0 +1,42 @@
+{
+    "name": "shooter-blink",
+    "version": "1.0.0",
+    "description": "Game",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "game"
+    ],
+    "devDependencies": {
+        "babel-preset-es2015": "^6.24.1",
+        "gulp": "~3.9.1",
+        "gulp-babel": "^6.1.2",
+        "gulp-browserify": "https://github.com/deepak1556/gulp-browserify/tarball/master",
+        "gulp-concat": "^2.6.1",
+        "gulp-connect": "^5.0.0",
+        "gulp-if": "^2.0.2",
+        "gulp-notify": "^2.2.0",
+        "gulp-plumber": "^1.1.0",
+        "gulp-uglify": "^2.1.2",
+        "gulp-zip": "^4.0.0"
+    },
+    "author": "azbang",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-whitelist": "^1.3.2",
+        "glslify": "^6.1.0",
+        "pixi-filters": "^1.0.6",
+        "pixi.js": "^4.5.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
