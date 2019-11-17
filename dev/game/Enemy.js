@@ -10,6 +10,8 @@ class Enemy extends Entity {
 	onDead(rotation) {
 		const { x, y } = this.sprite.position;
 		this.level.dropOrgan(x, y, rotation);
+		this.level.dropOrgan(x, y, rotation);
+		Math.random() < 0.5 && this.level.dropOrgan(x, y, rotation);
 		// drops organs...
 	}
 

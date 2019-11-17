@@ -14,14 +14,14 @@ const BRAIN = 'mozg';
 
 class Level {
 	create() {
-		let lvl = Math.floor(Math.random() * 2) + 1;
+		let lvl = Math.floor(Math.random() * 3) + 1;
 		if (UI.notFirstLevel) {
 			// САМАЯ ТУПАЯ ГЕНЕРАЦИЯ
 			if (UI.isDead) {
 				lvl = 'home';
 			} else {
 				while (lvl === UI.lastLvl) {
-					lvl = Math.floor(Math.random() * 2) + 1;
+					lvl = Math.floor(Math.random() * 3) + 1;
 				}
 				UI.lastLvl = lvl;
 			}

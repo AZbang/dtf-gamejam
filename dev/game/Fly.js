@@ -11,6 +11,8 @@ class Fly extends Entity {
 	onDead(rotation) {
 		const { x, y } = this.sprite.position;
 		this.level.dropOrgan(x, y, rotation);
+		this.level.dropOrgan(x, y, rotation);
+		this.level.dropOrgan(x, y, rotation);
 		//console.log('DEAD!');
 		// drops organs...
 	}
