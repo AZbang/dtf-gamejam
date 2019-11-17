@@ -10,6 +10,10 @@ class Slave extends Entity {
 	}
 
 	update() {
+        if (this.sprite.y > 300) {
+			this.dead();
+        }
+
 		if (this.sprite.isMainHero) this.notActive = true;
 		if (this.notActive) {
 			this.level.physics.arcade.overlap(this.sprite, this.level.player.sprite, () => {

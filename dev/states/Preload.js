@@ -32,7 +32,7 @@ class Preload {
 		this.load.tilemap('level1', './assets/levels/level1.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('level2', './assets/levels/level2.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('level3', './assets/levels/level3.json', null, Phaser.Tilemap.TILED_JSON);
-		this.load.tilemap('level4', './assets/levels/level4.json', null, Phaser.Tilemap.TILED_JSON);
+		//this.load.tilemap('level4', './assets/levels/level5.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('home', './assets/levels/home.json', null, Phaser.Tilemap.TILED_JSON);
 
 		this.load.spritesheet('fire_blue', './assets/atlases/fire_blue.png', 16, 16, 4);
