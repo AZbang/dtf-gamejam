@@ -6,6 +6,7 @@ class Fly extends Entity {
 		this.start = [x, y];
 		this.attackMode = true;
 		this.timer = 0;
+		this.sprite.body.gravity.y = 0;
 	}
 
 	onDead(rotation) {
@@ -25,11 +26,6 @@ class Fly extends Entity {
 
 	update() {
 		if (!this.track || this.track.class.isDead) return this.targetEnemy();
-		if (this.level.game.math.distance(this.track.x, this.track.y, this.sprite.x, this.sprite.y) > 300) {
-			this.sprite.position.x = this.start[0];
-			this.sprite.position.y = this.start[1];
-			return;
-		}
 
 		if (this.timer > 100) {
 			this.timer = 0;
