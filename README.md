@@ -1,10 +1,12 @@
-# BlinkShooter [Prototype]
+# DTF GameJam
 
-![gameplay](https://github.com/AZbang/media-storage/blob/master/BlinkShooter/gameplay.gif)
-> **Top Down Shooter for Android, IOS, PC, Browser**
+![screen](./screen.png)
 
-## Author
-**Andrey Zhevlakov (@AZbang)**
-* Mail: azbango5@gmail.com
-* __[VK](https://vk.com/id216312691)__
-* __[Telegram](https://telegram.me/AZbang)__
+Ссылка на игру:
+
+https://azbang.github.io/dtf-gamejam/www/index.html
+
+# Концепция
+
+Кор. механика игры -- собирать органы и создавать подданных, которые необходимы для прохождения различных локаций.
+Реиграбельность заключается в перепрохождении локаций с новым числом зомби, что поволяет исследовать новые непроходимые до этого места. В перспективе наличие дополнительных миров, крафт из органов различных видов подданых, что позволит проходить старые препятствия, которые при первом прохождении пройти не удалось.
