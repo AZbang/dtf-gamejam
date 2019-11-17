@@ -6,7 +6,13 @@ class Fly extends Entity {
 		this.start = [x, y];
 		this.attackMode = true;
 		this.timer = 0;
+		this.level.physics.arcade.enable(this.sprite);
+		this.sprite.body.drag.set(150);
+		this.sprite.body.maxVelocity.set(1000);
+		this.sprite.body.width = 16;
+		this.sprite.body.height = 16;
 		this.sprite.body.gravity.y = 0;
+		this.sprite.syncBounds = true;
 	}
 
 	onDead(rotation) {

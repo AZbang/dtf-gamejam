@@ -479,8 +479,19 @@
                  "type":"fly",
                  "visible":true,
                  "width":0,
-                 "x":725.333333333333,
-                 "y":144
+                 "x":767.333333333333,
+                 "y":78.6666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":100,
+                 "name":"",
+                 "rotation":0,
+                 "type":"fly",
+                 "visible":true,
+                 "width":0,
+                 "x":1052.66666666667,
+                 "y":158.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -489,7 +500,7 @@
          "y":0
         }],
  "nextlayerid":19,
- "nextobjectid":100,
+ "nextobjectid":101,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.4",

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="19" nextobjectid="100">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="19" nextobjectid="101">
  <tileset firstgid="1" name="tilemap" tilewidth="16" tileheight="16" tilecount="289" columns="17">
   <image source="../atlases/tilemap.png" width="272" height="272"/>
  </tileset>
@@ -115,6 +115,7 @@
   <object id="96" type="fly" x="1244" y="94"/>
   <object id="97" type="finish" x="1550.5" y="89.6666" width="49" height="44.6667"/>
   <object id="98" type="death" x="1529" y="115.333"/>
-  <object id="99" type="fly" x="725.333" y="144"/>
+  <object id="99" type="fly" x="767.333" y="78.6667"/>
+  <object id="100" type="fly" x="1052.67" y="158.667"/>
  </objectgroup>
 </map>
