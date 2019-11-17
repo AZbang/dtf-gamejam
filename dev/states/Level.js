@@ -89,6 +89,7 @@ class Level {
 		this.slaveRight = 0;
 
 		this.controls = [];
+		this.finish = [];
 
 		this.swapButton.onUp.add(() => this.swapHero());
 		this._createEnemies();
@@ -129,7 +130,7 @@ class Level {
 				} else if (spawn.type === 'fire') {
 					this.elements.add(new Fire(this, ...args).sprite);
 				} else if (spawn.type === 'finish') {
-					this.finish = spawn;
+					this.finish.push(spawn);
 				} else if (spawn.type === 'fly') {
 					this.elements.add(new Fly(this, ...args).sprite);
 				} else if (spawn.type === 'death') {
@@ -240,11 +241,13 @@ class Level {
 		this.updateControl();
 
 		const { x, y } = this.player.sprite.position;
-		const rect = this.finish;
-		if (x < rect.x + 16 && x + 16 > rect.x && y < rect.y + 16 && y + 16 > rect.y) {
-			this.restructSlaves();
-			this.state.restart('Level');
-		}
+
+		this.finish.forEach(rect => {
+			if (x < rect.x + 16 && x + 16 > rect.x && y < rect.y + 16 && y + 16 > rect.y) {
+				this.restructSlaves();
+				this.state.restart('Level');
+			}
+		});
 		//this.physics.arcade.collide(this.enemies, this.enemies);
 	}
 }

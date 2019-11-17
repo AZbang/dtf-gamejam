@@ -26,6 +26,9 @@ class Fly extends Entity {
 
 	update() {
 		if (!this.track || this.track.class.isDead) return this.targetEnemy();
+		if (this.level.game.math.distance(this.track.x, this.track.y, this.sprite.x, this.sprite.y) > 300) {
+			return;
+		}
 
 		if (this.timer > 100) {
 			this.timer = 0;
