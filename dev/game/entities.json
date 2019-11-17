@@ -23,13 +23,13 @@
 	},
 	"gluz": {
 		"texture": "gluz",
-		"speed": 120,
+		"speed": 70,
 		"hp": 2,
 		"weapon": ""
 	},
 	"chiripakha": {
 		"texture": "chiripakha",
-		"speed": 200,
+		"speed": 100,
 		"hp": 1,
 		"weapon": ""
 	}

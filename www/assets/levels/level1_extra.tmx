@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="142">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="144">
  <tileset firstgid="1" name="tilemap" tilewidth="16" tileheight="16" tilecount="295" columns="17">
   <image source="../atlases/tilemap.png" trans="aaff7f" width="272" height="272"/>
   <tile id="0">
@@ -1016,5 +1016,10 @@
   <object id="139" name="tablichka1" type="death" x="181" y="66"/>
   <object id="140" name="tablichka4" type="death" x="487" y="63"/>
   <object id="141" type="fly" x="374" y="-13"/>
+  <object id="142" type="enemy" x="441" y="128">
+   <properties>
+    <property name="type" value="enemy"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

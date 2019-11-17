@@ -60,7 +60,7 @@ class Preload {
 
 		this.load.image('tablichka1', './assets/atlases/tablichka1.png');
 		this.load.image('tablichka2', './assets/atlases/tablichka2.png');
-		this.load.image('nextLoc', './assets/atlases/tablichka3.png');
+		this.load.image('newLoc', './assets/atlases/tablichka3.png');
 		this.load.image('tablichka4', './assets/atlases/tablichka4.png');
 		this.load.image('tablichka5', './assets/atlases/tablichka5.png');
 
