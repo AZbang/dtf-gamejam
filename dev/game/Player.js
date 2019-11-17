@@ -8,6 +8,10 @@ class Player extends Entity {
 	}
 
 	update() {
+		if (this.sprite.y > 300) {
+			this.dead();
+		}
+
 		this.level.physics.arcade.collide(this.sprite, this.level.solids);
 
 		this.sprite.scale.x = this.sprite.body.velocity.x < 0 ? -1 : 1;

@@ -3,26 +3,34 @@
 		"texture": "player",
 		"jump": 3,
 		"speed": 100,
+		"hp": 1,
 		"weapon": "gun"
 	},
 	"slave": {
 		"texture": "zombi",
 		"jump": 3,
 		"speed": 100,
+		"hp": 1,
 		"weapon": ""
 	},
 	"enemy": {
 		"texture": "demon",
 		"jump": 3,
 		"speed": 100,
+		"hp": 1,
 		"radiusVisibility": 150,
 		"weapon": ""
 	},
-	"fly": {
+	"gluz": {
+		"texture": "gluz",
+		"speed": 120,
+		"hp": 2,
+		"weapon": ""
+	},
+	"chiripakha": {
 		"texture": "chiripakha",
-		"jump": 3,
-		"speed": 100,
-		"radiusVisibility": 150,
+		"speed": 200,
+		"hp": 1,
 		"weapon": ""
 	}
 }

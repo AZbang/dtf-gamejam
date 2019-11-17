@@ -1,8 +1,8 @@
 const Entity = require('./Entity');
 
 class Fly extends Entity {
-	constructor(level, x, y, type = 'enemy') {
-		super(level, x, y, type);
+	constructor(level, x, y) {
+		super(level, x, y, Math.random() < 0.5 ? 'gluz' : 'chiripakha');
 		this.start = [x, y];
 		this.attackMode = true;
 		this.timer = 0;
@@ -11,7 +11,7 @@ class Fly extends Entity {
 	onDead(rotation) {
 		const { x, y } = this.sprite.position;
 		this.level.dropOrgan(x, y, rotation);
-		console.log('DEAD!');
+		//console.log('DEAD!');
 		// drops organs...
 	}
 
@@ -23,7 +23,7 @@ class Fly extends Entity {
 
 	update() {
 		if (!this.track || this.track.class.isDead) return this.targetEnemy();
-		if (this.level.game.math.distance(this.track.x, this.track.y, this.sprite.x, this.sprite.y) > 500) {
+		if (this.level.game.math.distance(this.track.x, this.track.y, this.sprite.x, this.sprite.y) > 300) {
 			this.sprite.position.x = this.start[0];
 			this.sprite.position.y = this.start[1];
 			return;
@@ -46,7 +46,7 @@ class Fly extends Entity {
 			this.sprite,
 			this.track.x,
 			this.track.y - (this.attackMode ? 0 : 120),
-			100
+			this.speed
 		);
 
 		// bullets

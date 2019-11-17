@@ -5,7 +5,7 @@ const Level = require('./states/Level.js');
 const Home = require('./states/Home.js');
 
 var ready = () => {
-	var game = new Phaser.Game(480, 320, Phaser.AUTO, 'ShooterBlink');
+	var game = new Phaser.Game(480, 14 * 16, Phaser.AUTO, 'ShooterBlink');
 
 	game.state.add('Menu', Menu);
 	game.state.add('Home', Home);

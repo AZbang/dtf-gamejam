@@ -3,7 +3,7 @@ const UI = require('../mixins/UI');
 class Boot {
 	init() {
 		this.w = 480;
-		this.h = 320;
+		this.h = 15 * 16;
 		UI.game = this.game;
 	}
 

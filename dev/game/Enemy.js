@@ -26,8 +26,11 @@ class Enemy extends Entity {
 		const { x, y } = this.level.mainHero.position;
 		const rightTile = this.level.map.getTileWorldXY(this.sprite.x + 16, this.sprite.y);
 		const leftTile = this.level.map.getTileWorldXY(this.sprite.x - 16, this.sprite.y);
-		if (rightTile) this.dir = -1;
-		if (leftTile) this.dir = 1;
+		const rightBottomTile = this.level.map.getTileWorldXY(this.sprite.x + 16, this.sprite.y + 16);
+		const leftBottomTile = this.level.map.getTileWorldXY(this.sprite.x - 16, this.sprite.y + 16);
+
+		if (rightTile || !rightBottomTile) this.dir = -1;
+		if (leftTile || !leftBottomTile) this.dir = 1;
 		this.sprite.body.velocity.x = 80 * this.dir;
 		this.sprite.scale.x = this.dir * -1;
 

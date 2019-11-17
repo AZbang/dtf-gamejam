@@ -11,6 +11,7 @@ class Entity {
 		this.x = x || 0;
 		this.y = y || 0;
 		this.speed = this._entity.speed || 100;
+		this.hp = this._entity.hp || 1;
 		this.radiusVisibility = 100;
 		this.isJumping = false;
 		this.isDead = false;
@@ -51,7 +52,8 @@ class Entity {
 			this.level.physics.arcade.overlap(bullets[i], this.sprite, (person, bullet) => {
 				this.sprite.body.velocity.x += Math.cos(this.sprite.rotation) * 10;
 				this.sprite.body.velocity.y += Math.sin(this.sprite.rotation) * 10;
-				this.dead(bullet.rotation);
+				this.hp--;
+				if (this.hp === 0) this.dead(bullet.rotation);
 				bullet.kill();
 			});
 		}

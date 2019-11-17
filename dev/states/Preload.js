@@ -31,7 +31,11 @@ class Preload {
 		// Levels
 		this.load.tilemap('level1', './assets/levels/level1.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('level2', './assets/levels/level2.json', null, Phaser.Tilemap.TILED_JSON);
+		this.load.tilemap('level3', './assets/levels/level3.json', null, Phaser.Tilemap.TILED_JSON);
+		this.load.tilemap('level4', './assets/levels/level4.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.tilemap('home', './assets/levels/home.json', null, Phaser.Tilemap.TILED_JSON);
+
+		this.load.spritesheet('fire_blue', './assets/atlases/fire_blue.png', 16, 16, 4);
 
 		this.load.image('tilemap', './assets/atlases/tilemap.png');
 		this.load.image('bg', './assets/atlases/fon.png');
@@ -45,10 +49,23 @@ class Preload {
 		this.load.image('demon', './assets/atlases/demon.png');
 		this.load.image('zombi', './assets/atlases/zombi.png');
 		this.load.image('chiripakha', './assets/atlases/chiripakha.png');
-		this.load.spritesheet('fire_blue', './assets/atlases/fire_blue.png', 16, 16, 4);
+		this.load.image('gluz', './assets/atlases/gluz.png');
+		this.load.image('death', './assets/atlases/death.png');
 		this.load.image('minimozg', './assets/atlases/minimozg.png');
 		this.load.image('minipalya', './assets/atlases/minipalya.png');
 		this.load.image('minizambi', './assets/atlases/minizambi.png');
+		this.load.image('nextLoc', './assets/atlases/nextLoc.png');
+		this.load.image('screen', './assets/atlases/screen.png');
+		this.load.image('patry', './assets/atlases/patry.png');
+
+		this.load.image('tablichka1', './assets/atlases/tablichka1.png');
+		this.load.image('tablichka2', './assets/atlases/tablichka2.png');
+		this.load.image('nextLoc', './assets/atlases/tablichka3.png');
+		this.load.image('tablichka4', './assets/atlases/tablichka4.png');
+		this.load.image('tablichka5', './assets/atlases/tablichka5.png');
+
+		this.load.spritesheet('start', './assets/atlases/start.png', 50, 18);
+		this.load.spritesheet('pay', './assets/atlases/pay.png', 50, 18);
 	}
 
 	create() {

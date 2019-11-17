@@ -14,29 +14,37 @@ const BRAIN = 'mozg';
 
 class Level {
 	create() {
-		// САМАЯ ТУПАЯ ГЕНЕРАЦИЯ
 		let lvl = Math.floor(Math.random() * 2) + 1;
-		if (UI.isDead) {
-			lvl = 'home';
-		} else {
-			while (lvl === UI.lastLvl) {
-				lvl = Math.floor(Math.random() * 2) + 1;
+		if (UI.notFirstLevel) {
+			// САМАЯ ТУПАЯ ГЕНЕРАЦИЯ
+			if (UI.isDead) {
+				lvl = 'home';
+			} else {
+				while (lvl === UI.lastLvl) {
+					lvl = Math.floor(Math.random() * 2) + 1;
+				}
+				UI.lastLvl = lvl;
 			}
-		}
-		UI.lastLvl = lvl;
-		lvl = UI.isDead ? lvl : 'level' + lvl;
-		UI.isDead = false;
+
+			lvl = UI.isDead ? lvl : 'level' + lvl;
+			UI.isDead = false;
+		} else lvl = 'level1';
+		UI.notFirstLevel = true;
 
 		this.map = this.game.add.tilemap(lvl, 16, 16);
 		this.map.addTilesetImage('tilemap');
-		this.map.debugMap = true;
+		//	this.map.debugMap = true;
+
+		//this.game.camera.bounds = null;
+		//this.game.camera.bounds.setTo(-Infinity, -Infinity, Infinity, Infinity);
 
 		// FUCKING PHASER! I HATE U BITCH
 		this.game.add.sprite(0, 0, 'bg').fixedToCamera = true;
 		this.game.add.sprite(224, 0, 'bg').fixedToCamera = true;
 		this.game.add.sprite(224 * 2, 0, 'bg').fixedToCamera = true;
 
-		this.world.setBounds(0, 0, 224, 100 * 16);
+		this.world.setBounds(0, 0, 30 * 16, 100 * 16);
+		// this.camera.setBoundsToWorld	();
 
 		this.solids = this.map.createLayer('solids');
 
@@ -108,11 +116,11 @@ class Level {
 	_createEnemies() {
 		this.map.objects.spawn &&
 			this.map.objects.spawn.forEach(spawn => {
-				const args = [spawn.x + spawn.width / 2, spawn.y + spawn.height / 2, spawn.type];
+				const args = [spawn.x + spawn.width / 2, spawn.y + spawn.height / 2, spawn.type, spawn.name];
 				if (spawn.type === 'player') {
 					this.player = new Player(this, ...args);
 					this.mainHero = this.player.sprite;
-					this.camera.follow(this.mainHero, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+					this.camera.follow(this.mainHero, Phaser.Camera.FOLLOW_PLATFORMER, 0.1, 0.1);
 					this.player.weapon.weapon.onFire.add(() => {
 						UI.bullets -= 1;
 					});
@@ -126,7 +134,7 @@ class Level {
 					this.elements.add(new Fly(this, ...args).sprite);
 				} else if (spawn.type === 'death') {
 					this.elements.add(new Death(this, ...args).sprite);
-				} else {
+				} else if (spawn.type === 'enemy') {
 					let enemy = new Enemy(this, ...args);
 					this.enemies.add(enemy.sprite);
 				}
@@ -141,7 +149,7 @@ class Level {
 			this.mainHero.body.velocity.y = 0;
 			this.isPlayerMain = true;
 			this.mainHero = this.player.sprite;
-			this.camera.follow(this.mainHero, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+			this.camera.follow(this.mainHero, Phaser.Camera.FOLLOW_PLATFORMER, 0.1, 0.1);
 			this.mainHero.isMainHero = true;
 			return;
 		}
@@ -150,7 +158,7 @@ class Level {
 		this.mainHero.body.velocity.y = 0;
 		if (!notSwap) this.isPlayerMain = !this.isPlayerMain;
 		this.mainHero = this.isPlayerMain ? this.player.sprite : slave;
-		this.camera.follow(this.mainHero, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+		this.camera.follow(this.mainHero, Phaser.Camera.FOLLOW_PLATFORMER, 0.1, 0.1);
 		this.mainHero.isMainHero = true;
 	}
 
