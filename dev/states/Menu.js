@@ -21,7 +21,13 @@ class Menu {
 		// 	this.state.start('Settings');
 		// });
 
-		// this.info = UI.addText(10, 5, 'font2', 'Powered by azbang @v0.1', 14);
+		this.info = UI.addText(
+			480 / 2,
+			320 / 2,
+			'СПЕШЛ ФО DTF GameJam!\nPS. Когда нибудь игра выйдет на всех утюгах мира.',
+			'#fff',
+			14
+		);
 		// this.info.anchor.set(0);
 	}
 	update() {}

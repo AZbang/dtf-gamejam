@@ -14,14 +14,14 @@ const BRAIN = 'mozg';
 
 class Level {
 	create() {
-		let lvl = Math.floor(Math.random() * 3) + 1;
+		let lvl = Math.floor(Math.random() * 4) + 1;
 		if (UI.notFirstLevel) {
 			// САМАЯ ТУПАЯ ГЕНЕРАЦИЯ
 			if (UI.isDead) {
 				lvl = 'home';
 			} else {
 				while (lvl === UI.lastLvl) {
-					lvl = Math.floor(Math.random() * 3) + 1;
+					lvl = Math.floor(Math.random() * 4) + 1;
 				}
 				UI.lastLvl = lvl;
 			}
@@ -137,6 +137,8 @@ class Level {
 				} else if (spawn.type === 'enemy') {
 					let enemy = new Enemy(this, ...args);
 					this.enemies.add(enemy.sprite);
+				} else if (spawn.type === 'organ') {
+					this.dropOrgan(args[0], args[1], 0);
 				}
 			});
 	}

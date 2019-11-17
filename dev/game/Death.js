@@ -28,6 +28,8 @@ class Death {
 		this.window.alpha = 0;
 		this.level.physics.arcade.overlap(this.sprite, this.level.player.sprite, (_, pl) => {
 			this.window.alpha = 1;
+			const slaves = this.level.enemies.children.filter(e => e.class.type === 'slave' && !e.class.isDead);
+			if (slaves.length >= 10) this.level.game.state.start('Menu');
 		});
 	}
 }
